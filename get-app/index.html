@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> thinnan - Discover | Cook | Share </title>
+
+    <!-- Open Graph Meta Tags for sharing previews -->
+    <meta property="og:title" content="thinnan">
+    <meta property="og:description" content="bringing people together plate by plate!">
+    <meta property="og:image" content="https://thinnan.com/assets/logo.png"> <!-- Use actual logo path -->
+    <meta property="og:url" content="https://thinnan.com/get-app/">
+    <meta property="og:type" content="website">
+
+    <!-- Add basic styles for mobile-friendly design -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+            width: 95%;
+            /* Almost full width */
+            height: 90vh;
+            /* Almost full height */
+            text-align: center;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            width: 150px;
+            /* Slightly larger logo for mobile */
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            /* Slightly bigger for mobile */
+            color: #333;
+        }
+
+        h2 {
+            font-size: 1.3em;
+            /* Slightly bigger for mobile */
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #777;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .redirecting {
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+
+    <script>
+        function redirectToAppStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/fi/app/thinnan/id6502411893"; // App Store link
+            } else if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.jathikka.thinaan"; // Play Store link
+            } else {
+                document.getElementById("message").textContent = "Please download the Thinnan app from the App Store or Play Store.";
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = function () {
+            redirectToAppStore();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Add your logo -->
+        <img src="https://thinnan.com/assets/app_icon.png" alt="thinnan logo" class="logo">
+        <!-- Use the correct URL to your logo -->
+
+        <!-- Main heading and description -->
+        <h1>thinnan</h1>
+        <h2>bringing people together plate by plate!</h2>
+
+        <!-- Message to show if redirection fails -->
+        <p id="message" class="redirecting">Redirecting you to the appropriate store...</p>
+    </div>
+</body>
+
+</html>
