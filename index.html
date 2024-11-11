@@ -5,16 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redirecting...</title>
 
-  <!-- Open Graph Meta Tags for social sharing -->
+  <!-- Removed Open Graph Meta Tags from the initial page -->
+  <!-- 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="thinnan" />
   <meta property="og:description" content="The Social Food Network" />
   <meta property="og:image" content="https://thinnan.com/assets/logo.png"> 
   <meta property="og:url" content="https://thinnan.com/get-app/">
+  -->
 
-  <!-- Redirect to /get-app after a slight delay -->
+  <!-- Modified Redirect to /get-app with a delay -->
   <script>
-    window.location.replace("/get-app");
+    setTimeout(function() {
+      window.location.replace("/get-app");
+    }, 2000); // Delay of 2 seconds (Changed line)
   </script>
 </head>
 <body>
