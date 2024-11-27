@@ -1,13 +1,23 @@
 {
-    "rewrites": [
+    "redirects": [
       {
-        "source": "/.well-known/:path*",  
-        "destination": "/.well-known/:path*"
+        "source": "/.well-known/:path*",
+        "destination": "/.well-known/:path*",
+        "has": [{ "type": "host", "value": "thinnan.com" }],
+        "statusCode": 200
       },
       {
         "source": "/:path*",
-        "destination": "/get-app" 
+        "destination": "https://www.thinnan.com/:path*",
+        "has": [{ "type": "host", "value": "thinnan.com" }],
+        "statusCode": 301
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/.well-known/:path*",
+        "destination": "/.well-known/:path*"
       }
     ]
-}
+  }
   
