@@ -12,9 +12,13 @@
   <meta property="og:image" content="https://thinnan.com/assets/logo.png"> 
   <meta property="og:url" content="https://thinnan.com/get-app/">
 
-  <!-- Redirect to /get-app after a slight delay -->
+  <!-- Redirect to /get-app for everything except /.well-known/ paths -->
   <script>
-    window.location.replace("/get-app");
+    // Check if the path starts with /.well-known/
+    if (!window.location.pathname.startsWith("/.well-known/")) {
+      // Redirect if the path is not under /.well-known/
+      window.location.replace("/get-app");
+    }
   </script>
 </head>
 <body>
